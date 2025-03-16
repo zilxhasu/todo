@@ -114,7 +114,7 @@
       //初始化,從localStorage 讀取出去
       const todos = localStorage.getItem("todos")
         ? JSON.parse(localStorage.getItem("todos"))
-        : [];
+        : [{}];
 
       console.log(todos);
 
