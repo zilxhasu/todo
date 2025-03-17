@@ -144,12 +144,11 @@
             todoList,
             //當資料變化時,執行的方法
             () => {
-              localStorage.setItem(
-                "todos",
-                JSON.stringify(todoList.value),
-                //深層觀測
-                { deep: true }
-              );
+              localStorage.setItem("todos", JSON.stringify(todoList.value));
+              //深層觀測
+              {
+                deep: true;
+              }
             }
           );
 
