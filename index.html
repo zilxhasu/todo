@@ -146,9 +146,9 @@
             () => {
               localStorage.setItem("todos", JSON.stringify(todoList.value));
               //深層觀測
-              {
-                deep: true;
-              }
+            },
+            {
+              deep: true,
             }
           );
 
