@@ -121,12 +121,11 @@
         ? JSON.parse(localStorage.getItem("todos"))
         : [];
 
-      console.log(todos);
-
       createApp({
         setup() {
           const newTodo = ref("");
           const todoList = ref(todos);
+
           const deleteTodo = (todo) => {
             const index = todoList.value.indexOf(todo);
             todoList.value.splice(index, 1);
@@ -143,10 +142,9 @@
             //觀測目標
             todoList,
             //當資料變化時,執行的方法
-            () => todoList.value,
             (newVal) => {
               localStorage.setItem("todos", JSON.stringify(newVal));
-              //深層觀測
+              //深層觀測(確保監視陣列內部物件的變化)
             },
             {
               deep: true,
