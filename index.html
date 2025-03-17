@@ -135,7 +135,7 @@
             todoList.value.push({
               id: Date.now(),
               text: newTodo.value,
-              completed: false,
+              completed: todo.completed ?? false,
             });
             newTodo.value = "";
           };
