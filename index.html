@@ -143,8 +143,9 @@
             //觀測目標
             todoList,
             //當資料變化時,執行的方法
-            () => {
-              localStorage.setItem("todos", JSON.stringify(todoList.value));
+            () => todoList.value,
+            (newVal) => {
+              localStorage.setItem("todos", JSON.stringify(newVal));
               //深層觀測
             },
             {
