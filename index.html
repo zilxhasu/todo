@@ -134,14 +134,13 @@
             todoList.value.push({
               id: Date.now(),
               text: newTodo.value,
-              completed: todo.completed ?? false,
+              completed: false,
             });
             newTodo.value = "";
           };
           watch(
             //觀測目標
             todoList,
-            () => todoList.value,
             //當資料變化時,執行的方法
             (newVal) => {
               localStorage.setItem("todos", JSON.stringify(newVal));
